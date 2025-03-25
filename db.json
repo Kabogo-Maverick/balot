@@ -2,39 +2,45 @@
   "characters": [
     {
       "id": "1",
-      "name": "Cute Cat",
-      "image": "images/cat.gif",
-      "votes": 0
+      "name": "Giraffe",
+      "image": "images/Giraffe.jpeg",
+      "votes": 332
     },
     {
       "id": "2",
-      "name": "Monkey Joe",
-      "image": "images/monkey.gif",
-      "votes": 0
+      "name": "Turtle",
+      "image": "images/turtle.jpeg",
+      "votes": 35
     },
     {
       "id": "3",
-      "name": "Zebra",
-      "image": "images/zebra.gif",
-      "votes": 121
+      "name": "Wolf",
+      "image": "images/wolf.jpeg",
+      "votes": 654
     },
     {
       "id": "4",
-      "name": "Bear",
-      "image": "images/bear.gif",
-      "votes": 0
+      "name": "Eagle",
+      "image": "images/eagle.jpeg",
+      "votes": 543
     },
     {
       "id": "5",
-      "name": "Panda",
-      "image": "images/panda.gif",
-      "votes": 35
+      "name": "Zebra",
+      "image": "images/zebra.jpeg",
+      "votes": 258
     },
     {
       "id": "6",
       "name": "Elephant",
       "image": "images/ele.jpeg",
-      "votes": 35
+      "votes": 268
+    },
+    {
+      "id": "7",
+      "name": "Leo",
+      "image": "images/leo.jpeg",
+      "votes": 477
     }
   ]
 }

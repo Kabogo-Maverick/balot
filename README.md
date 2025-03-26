@@ -1,5 +1,5 @@
-             🦁WAKANDA BALOT
-Wakanda Balot is a simple and interactive voting application where users can vote for their favorite animals. The project is built using HTML, CSS, and JavaScript and utilizes a JSON server to manage and update vote counts dynamically. This allows users to select an animal from the character bar, view its details, cast votes, and reset votes as needed.
+             🦁WAKANDA BALLOT
+Wakanda Ballot is a simple and interactive voting application where users can vote for their favorite animals. The project is built using HTML, CSS, and JavaScript and utilizes a JSON server to manage and update vote counts dynamically. This allows users to select an animal from the character bar, view its details, cast votes, and reset votes as needed.
 
              🔥Features
 The application displays a list of animals in the character bar, which users can click on to reveal their respective images and vote counts. Once an animal is selected, users can enter a number into the input field and submit their votes, which will update both the displayed count and the database. A reset button is also provided, allowing users to set the vote count back to zero.

@@ -27,13 +27,13 @@ To run the Wakanda Balot app locally, follow these steps:
 1️⃣ Install JSON Server
 Since this project requires a local server to store and update votes, you need to install JSON Server. Ensure that Node.js is installed on your machine, then open a terminal or command prompt and run:
 
-     [npm install -g json-server]
+     npm install -g json-server
 
 
 2️⃣ Start the Server
 Once the JSON Server is installed, navigate to the project directory and run the following command:
       
-      [json-server --watch db.json --port 3000]
+      json-server --watch db.json --port 3000
 
 This will start a local server and make the character data available at:
 

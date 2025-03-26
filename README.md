@@ -1,168 +1,45 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/-R948yT9)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18852637&assignment_repo_type=AssignmentRepo)
-# Flatacuties
+             🦁WAKANDA BALOT
+Wakanda Balot is a simple and interactive voting application where users can vote for their favorite animals. The project is built using HTML, CSS, and JavaScript and utilizes a JSON server to manage and update vote counts dynamically. This allows users to select an animal from the character bar, view its details, cast votes, and reset votes as needed.
 
-Today you'll be building an app for voting for the cutest animal! You will be
-using a local API and building out the frontend for our app, Flatacuties.
+             🔥Features
+The application displays a list of animals in the character bar, which users can click on to reveal their respective images and vote counts. Once an animal is selected, users can enter a number into the input field and submit their votes, which will update both the displayed count and the database. A reset button is also provided, allowing users to set the vote count back to zero.
 
-## Demo
+              📂Project Structure
+The project consists of several key files and directories that work together to ensure smooth functionality:
 
-Use this gif as an example of how the app should work.
+The index.html file contains the structure of the webpage, including the character bar, image display, vote form, and reset button.
 
-![Demo](assets/demo.gif)
+The style.css file handles the styling of the app, ensuring a visually appealing layout.
 
-> To view in VSCode, right click on the README.md file and select "Open Preview".
+The src/index.js file contains the JavaScript logic, which fetches characters from the JSON server, updates the UI dynamically, and handles vote submissions and resets.
 
-## Setup
+The db.json file acts as a mock database, storing the list of characters along with their names, images, and current vote counts.
 
-Run this command to get the backend started:
+The images/ directory contains all the GIFs used for displaying the animals.
 
-```sh
-json-server --watch db.json
-```
 
-Test your server by visiting this route in the browser:
 
-[http://localhost:3000/characters](http://localhost:3000/characters)
 
-Then, open the `index.html` file on your browser to run the application.
+          🛠Setting Up and Running the Project
+To run the Wakanda Balot app locally, follow these steps:
 
-Write your code in the `src/index.js` file. The base URL for your API will be
-[http://localhost:3000](http://localhost:3000).
 
-## Deliverables
+1️⃣ Install JSON Server
+Since this project requires a local server to store and update votes, you need to install JSON Server. Ensure that Node.js is installed on your machine, then open a terminal or command prompt and run:
 
-As a user, I can:
+     [npm install -g json-server]
 
-1. See all characters names in a `div` with the id of `"character-bar"`. Create
-   a `span` tag with the character's name and add it the `div#character-bar`
-   once you have retrieved the character data from the server. You will need to
-   make a GET request to the following endpoint to retrieve the character data:
 
-   ```txt
-   GET /characters
+2️⃣ Start the Server
+Once the JSON Server is installed, navigate to the project directory and run the following command:
+      
+      [json-server --watch db.json --port 3000]
 
-   Example Response:
-   [
-    {
-      "id": 1,
-      "name": "Mr. Cute",
-      "image": "https://thumbs.gfycat.com/EquatorialIckyCat-max-1mb.gif",
-      "votes": 0
-    },
-    {
-      "id": 2,
-      "name": "Mr. Monkey",
-      "image": "https://thumbs.gfycat.com/FatalInnocentAmericanshorthair-max-1mb.gif",
-      "votes": 0
-    },
-    ...
-   ]
-   ```
+This will start a local server and make the character data available at:
 
-2. When the character in the `div#character-bar` is clicked, display the
-   character's details in the `div#detailed-info`. You can either use the
-   character information from your first request, or make a new request to this
-   endpoint to get the character's details:
+📌 http://localhost:3000/characters
 
-   ```txt
-   GET /characters/:id
 
-   Example Response:
-   {
-    "id": 1,
-    "name": "Mr. Cute",
-    "image": "https://thumbs.gfycat.com/EquatorialIckyCat-max-1mb.gif",
-    "votes": 0
-   }
-   ```
 
-3. When the `form#votes-form` is submitted, add the number of votes from the
-   input field to the character displayed in the `div#detailed-info`. **No
-   persistence is needed**. The number of votes should be _cumulative_. For
-   example, if a character currently has 5 votes, and a user adds another 5
-   votes via the form, the number of votes displayed for the character should
-   increase to 10.
-
-### Bonus Deliverables
-
-These bonus deliverables are here if you want an extra challenge and won't
-affect your score. **Make sure to commit your work to save your progress before
-attempting the bonus deliverables!**
-
-In the `index.html` file, there is some additional HTML that is currently
-commented out below the Reset Votes button. Remove the comments (delete the
-`<!--` and `-->` code around the elements) so you can complete the bonus
-deliverables.
-
-1. When the Reset Votes button is clicked, reset the votes back to 0.
-
-2. When the `form#character-form` is submitted, add a new character to the
-   `div#character-bar`. The new character in the character bar should behave the
-   same as the other characters when clicked (its details should be displayed
-   below, and it should have functionality to add votes).
-
-3. In addition to adding the character to the `div#character-bar` upon
-   submitting the form, the character's details should show up immediately in
-   the `div#detailed-info`.
-
-### Extra Bonus
-
-These extra bonus deliverables involve using `fetch` to update data on the
-`json-server` backend by using `POST`, `PATCH`, and `DELETE` requests. These are
-meant for an extra, extra challenge and won't affect your grade. **Make sure to
-commit your work to save your progress before attempting the extra bonus
-deliverables!**
-
-1. When a user adds or resets the votes for a character, in addition to
-   displaying the updated votes on the page, the votes should **also** be
-   updated on the server. You will need to make a request that follows this
-   structure:
-
-    ```txt
-    PATCH /characters/:id
-
-    Request Headers: {
-      Content-Type: application/json
-    }
-
-    Request Body: {
-      "votes": 100
-    }
-    ----
-
-    Example Response: {
-      "id": 1,
-      "name": "Mr. Cute",
-      "image": "https://thumbs.gfycat.com/EquatorialIckyCat-max-1mb.gif",
-      "votes": 100
-    }
-    ```
-
-2. When a user adds a new character to the page using the character form, in
-   addition to having the character show up on the page, it should **also** be
-   saved to the server. You will need to make a request that follows this
-   structure:
-
-    ```txt
-    POST /characters
-
-    Request Headers: {
-      Content-Type: application/json
-    }
-
-    Request Body: {
-      "name": "Character Name",
-      "image": "https://example.com/my-image.gif",
-      "votes": 0
-    }
-
-    ----
-
-    Example Response: {
-      "id": 6,
-      "name": "Character Name",
-      "image": "https://example.com/my-image.gif",
-      "votes": 0
-    }
-    ```
+3️⃣ Open the Application
+After starting the server, open the index.html file in your browser. You should see the character bar at the top, displaying different animal names. Clicking on any animal will reveal its image and vote count. Users can enter a number in the input field to add votes, and the vote count will update both on the screen and in the database. The reset button can be used to set the vote count back to zero.
